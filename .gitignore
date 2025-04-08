@@ -12,14 +12,14 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Ignore virtual environments
-env/
-venv/
+#env/
+#venv/
 
 # Ignore data
-data/raw/
-data/processed/
+#data/raw/
+#data/processed/
 
 # Ignore model files
 *.pkl
 *.joblib
-models/ 
+#models/ 
