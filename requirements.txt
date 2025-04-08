@@ -1,10 +1,30 @@
-pandas
+# Core Scientific Libraries
 numpy
-matplotlib
+pandas
 scikit-learn
-xgboost
+matplotlib
+seaborn
+
+# Explainability Tools
 shap
+lime
+
+# Development & Utilities
 jupyter
-streamlit
+notebook
+ipykernel
+
+# Optional Model Candidates
+xgboost
+lightgbm
+catboost
+
+# API & Dashboard (for future phases)
 fastapi
 uvicorn
+streamlit
+
+# Data Collection & Web
+requests
+beautifulsoup4
+lxml

@@ -1,144 +1,125 @@
 # 🏁 F1 Podium Predictor
 
-A production-quality machine learning project designed to predict whether a Formula 1 driver will finish on the podium (Top 3). This project combines data collection, advanced feature engineering, model training, explainability, simulation, and deployment to create a fully interactive and API-enabled prediction engine.
+A **production-quality machine learning project** designed to predict whether a Formula 1 driver will finish on the podium (Top 3).  
+Combines rule-based and advanced ML approaches — integrating data collection, feature engineering, simulation, explainability, and real-time deployment.
 
 ---
+
 > 🧠 *Can a machine predict podium finishes in Formula 1 with the strategic intuition of a race engineer? This project simulates that challenge using real-world data and machine learning.*
+
 ---
+
 ## 🎯 Objective
 
-To build a reliable podium prediction model using pre-race information such as qualifying positions, team performance, driver history, and track characteristics.
+To build a reliable podium prediction engine using pre-race data like qualifying results, team/driver performance, and track characteristics — evolving from simple baselines to full ML inference.
 
 ---
 
 ## 💼 Use Cases
 
-- 🕹️ **iGaming & Betting Platforms**: Enhance odds with ML-based probability estimates.
-- 🧮 **Fantasy F1 Tools**: Help users choose drivers with highest podium potential.
-- 📺 **Media & Broadcast**: Power real-time prediction visualizations.
-- 🧠 **Race Strategy & Scenario Modeling**: Simulate likely outcomes based on grid positions and track conditions.
+- 🕹️ **iGaming & Betting**: Improve odds-making with data-driven probabilities.
+- 🧮 **Fantasy F1 Tools**: Optimize team picks based on predicted podium potential.
+- 📺 **Media & Broadcast**: Power race-day visuals with explainable ML.
+- 🧠 **Race Strategy Simulation**: Support outcome modeling before the lights go out.
 
 ---
 
 ## 📈 Evaluation Metrics
 
-- **Precision@3** – Accuracy of predicting correct podium drivers
-- **ROC-AUC** – Classifier discrimination ability
-- **Log-loss** – Calibration of predicted probabilities
-- **F1-score** – Overall performance for Top 3 classification
+| Metric        | Purpose |
+|---------------|---------|
+| **Precision@3** | Accuracy of predicting podium finishes |
+| **F1 Score**    | Classification balance (precision & recall) |
+| **ROC-AUC**     | Discrimination ability of the model |
+| **Log-loss**    | Calibration of predicted probabilities |
 
 ---
 
-## 📁 Project Structure
+## 🧱 Project Structure
 
 ```bash
 f1-podium-predictor/
-├── data/               # Raw and processed datasets
+├── data/
 │   ├── raw/
-│   └── processed/
-├── notebooks/          # Jupyter notebooks for exploration and modeling
-├── scripts/            # Modular scripts for each pipeline stage
-├── app/                # FastAPI backend or Streamlit app
-├── dashboard/          # Dashboard code and configs
-├── models/             # Saved models and checkpoints
-├── tests/              # Unit tests
-├── requirements.txt    # Python dependencies
+│   └── processed/v0_1_0/
+├── notebooks/
+│   └── v0_1_0/
+├── scripts/
+├── models/
+│   └── v0_1_0/
+├── reports/
+│   └── v0_1_0/
+├── app/
+├── dashboard/
+├── docs/
+│   ├── feature_plan.md
+│   ├── model_design.md
+│   └── baseline_results.md
+├── tests/
+├── README.md
+├── CHANGELOG.md
+├── requirements.txt
 ├── .gitignore
-└── README.md
+└── LICENSE
 ```
 
 ---
 
-## 🗂️ Detailed Development Plan
+## 🔁 Version Control Strategy
 
-### Phase 1: Problem Framing
-- Define prediction target: binary podium classification
-- Identify use cases and stakeholders
-- Establish success criteria (Precision@3 > 70%)
+- `main` → ✅ Clean, production-ready code only (e.g. `v0.1.0`)
+- `dev` → 🧪 Active development & feature integration
+- `feat/*` → Feature-specific work (e.g. `feat/data-collection`)
 
-### Phase 2: Data Collection
-- Collect race results, team/driver stats (≥5 seasons)
-- Add track metadata, qualifying positions, weather
-- Optional: Add pre-race NLP sentiment data
-
-### Phase 3: Preprocessing & EDA
-- Handle nulls/outliers, format consistency
-- EDA with correlations, distributions, trends
-
-### Phase 4: Feature Engineering
-- Rolling averages (form), penalty flags, reliability
-- Team/driver-track interactions
-- SHAP-based importance analysis
-
-### Phase 5: Model Training
-- Try Logistic Regression, XGBoost, CatBoost
-- Use k-fold CV stratified by race
-- Evaluate all defined metrics
-
-### Phase 6: Explainability & Error Analysis
-- SHAP/LIME for top 10 features
-- Analyze 3+ misclassification cases
-- Calibration curve + confusion matrix
-
-### Phase 7: Monte Carlo Simulation
-- Run 10,000+ race simulations per GP
-- Output podium probability distributions
-- Compare vs real outcomes
-
-### Phase 8: Real-Time Prediction API
-- FastAPI endpoint: receive grid data, return podium prediction
-- Test with JSON inputs
-- Response time < 500ms
-
-### Phase 9: Dashboard Development
-- Streamlit app with driver/track/weather selectors
-- Visualize probabilities, SHAP values, scenario simulations
-
-### Phase 10: CI/CD & Testing
-- Write unit tests for logic and pipeline
-- Set up GitHub Actions for auto-testing and linting
-- Achieve ≥80% code coverage
-
-### Phase 11: Documentation & Delivery
-- Complete README and setup instructions
-- Demo video (2–4 min walkthrough)
-- Publish blog post on LinkedIn or Medium
-- Add project to GitHub portfolio and CV
+Use PRs to merge `feat/` → `dev`, then `dev` → `main`  
+Each version (`v0_1_0`, `v0_2_0`, ...) has its own notebooks, models, and outputs.
 
 ---
 
-## 📌 Version Control Strategy
+## 🧪 Phase Roadmap
 
-- `main` – Production-ready code only
-- `dev` – Active development (feature branches merged here)
-- Feature branches:
-  - `feat/data-collection`
-  - `feat/feature-engineering`
-  - `feat/model-training`
-  - `feat/api`
-  - `feat/dashboard`
+### ✅ Phase 1: Problem Framing & Baseline (Complete)
+- Rule: Podium = Grid Position ≤ 3
+- Metric output stored in `reports/v0_1_0/`
+- Notebook: `notebooks/v0_1_0/01b_Baseline_Model_v0.1.0.ipynb`
 
-✅ Use pull requests to merge `dev` into `main` after each completed phase.
+### 🚧 Phase 2: Data Collection & Cleaning (Next)
+- Scrape or import ≥5 seasons of race data
+- Include grid, results, weather, track, reliability
+
+### 🔜 Future Phases
+- Feature Engineering
+- ML Model Training
+- SHAP/LIME Explainability
+- Monte Carlo Simulation
+- API Inference (FastAPI)
+- Dashboard Visualization (Streamlit)
+- CI/CD and Testing
 
 ---
 
-## 🛠️ Requirements
+## 🧠 Setup Instructions
 
-Install dependencies:
 ```bash
+git clone https://github.com/mantas123456/f1-podium-predictor.git
+cd f1-podium-predictor
 pip install -r requirements.txt
 ```
 
+To run the baseline model:
+```bash
+jupyter notebook notebooks/v0_1_0/01b_Baseline_Model_v0.1.0.ipynb
+```
+
 ---
 
-## 📊 Status
+## 📜 License
 
-🚧 Phase 1: Problem Framing – Complete  
-🚧 Phase 2: Data Collection – In Progress  
-🔜 Phase 3: EDA and Preprocessing – Next
+This project is licensed under the MIT License — see the `LICENSE` file.
 
 ---
 
 ## 👤 Author
 
-Created by [Mantas](https://github.com/mantas123456) – Data Scientist with a passion for motorsport analytics and real-world machine learning deployment.
+Created by [Mantas](https://github.com/mantas123456)  
+🔬 Data Scientist | 🏎 Motorsport Fan | 💡 ML for Real-World Insight

@@ -1,0 +1,1 @@
+# Notes or structure for the notebook folder
