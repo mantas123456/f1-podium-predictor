@@ -3,7 +3,8 @@
 A production-quality machine learning project designed to predict whether a Formula 1 driver will finish on the podium (Top 3). This project combines data collection, advanced feature engineering, model training, explainability, simulation, and deployment to create a fully interactive and API-enabled prediction engine.
 
 ---
-
+> 🧠 *Can a machine predict podium finishes in Formula 1 with the strategic intuition of a race engineer? This project simulates that challenge using real-world data and machine learning.*
+---
 ## 🎯 Objective
 
 To build a reliable podium prediction model using pre-race information such as qualifying positions, team performance, driver history, and track characteristics.
