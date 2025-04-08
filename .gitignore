@@ -1,0 +1,25 @@
+
+---
+
+### ⚙️ 2. `.gitignore`
+
+```gitignore
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+env/
+venv/
+
+# Ignore data
+data/raw/
+data/processed/
+
+# Ignore model files
+*.pkl
+*.joblib
+models/ 
